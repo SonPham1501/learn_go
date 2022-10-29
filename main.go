@@ -2,11 +2,13 @@ package main
 
 import (
 	"fmt"
-	"son/user/learn_golang/lib"
+	"strconv"
 )
 
 func main() {
-	i := 12
+	i := "12"
 
-	fmt.Printf("%T, %v", i, lib.N)
+	j, er := strconv.Atoi(i)
+
+	fmt.Printf("%T, %v", er, j)
 }
