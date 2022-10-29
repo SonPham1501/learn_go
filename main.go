@@ -5,5 +5,6 @@ import (
 )
 
 func main() {
-	fmt.Println("Hello word")
+	i := 12
+	fmt.Printf("%T, %v", i, i)
 }
