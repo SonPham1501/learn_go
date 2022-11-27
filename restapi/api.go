@@ -28,16 +28,16 @@ func init() {
 }
 
 func Api() {
-	myRoute := mux.NewRouter().StrictSlash(true)
-	myRoute.HandleFunc("/", home)
-	myRoute.HandleFunc("/get-articles", getArticles).Methods(http.MethodGet)
-	myRoute.HandleFunc("/get-article/{id}", getArticle).Methods(http.MethodGet)
-	myRoute.HandleFunc("/create-article", createNewArticle).Methods(http.MethodPost)
-	myRoute.HandleFunc("/delete-article/{id}", deleteArticle).Methods(http.MethodDelete)
-	myRoute.HandleFunc("/update-article", updateArticle).Methods(http.MethodPut)
+	myRouter := mux.NewRouter().StrictSlash(true)
+	myRouter.HandleFunc("/", home)
+	myRouter.HandleFunc("/get-articles", getArticles).Methods(http.MethodGet)
+	myRouter.HandleFunc("/get-article/{id}", getArticle).Methods(http.MethodGet)
+	myRouter.HandleFunc("/create-article", createNewArticle).Methods(http.MethodPost)
+	myRouter.HandleFunc("/delete-article/{id}", deleteArticle).Methods(http.MethodDelete)
+	myRouter.HandleFunc("/update-article", updateArticle).Methods(http.MethodPut)
 
 	fmt.Println("START SERVER!")
-	log.Fatal(http.ListenAndServe(":8080", myRoute))
+	log.Fatal(http.ListenAndServe(":8080", myRouter))
 }
 
 func home(w http.ResponseWriter, r *http.Request) {
